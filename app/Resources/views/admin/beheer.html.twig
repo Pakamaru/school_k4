@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <table class="table" style="table-layout: fixed">
+            <caption>Dit zijn alle {{ type }}</caption>
+            <thead>
+            <tr>
+            {% for column in columns %}
+                    <td>{{ column }}</td>
+            {% endfor %}
+                <td>Weizig</td>
+                <td>Verwijder</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    {% if type == "Gebruikers" %}
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>€{{ item.salary }}</td>
+                        <td>{{ item.roles|join(', ')|lower }}</td>
+                        <td>{{ item.afdeling.name }}</td>
+
+                        <td title="reset het wachtwoord van deze gebruiker">
+                            <a href="{{ path('weizig', {'type':type,'id':item.id}) }}" >
+                                <span class="glyphicon glyphicon-pencil" style="color:red"></span>
+                            </a>
+                        </td>
+                        <td title="verwijder deze gebruiker definitief">
+                            <a href="{{ path('delete', {'type':type,'id':item.id}) }}" >
+                                <span class="glyphicon glyphicon-minus" style="color:red"></span>
+                            </a>
+                        </td>
+
+                    {% endif %}
+                    {% if type == "Sporten" %}
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.news }}</td>
+
+                    <td title="weizig deze sport">
+                        <a href="{{ path('weizig', {'type':type,'id':item.id}) }}" >
+                            <span class="glyphicon glyphicon-pencil" style="color:red"></span>
+                        </a>
+                    </td>
+                        <td title="verwijder deze sport">
+                            <a href="{{ path('delete', {'type':type,'id':item.id}) }}" >
+                                <span class="glyphicon glyphicon-minus" style="color:red"></span>
+                            </a>
+                        </td>
+
+                    {% endif %}
+                    {% if type == "Afdelingen" %}
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.location }}</td>
+
+                    <td title="weizig deze afdeling">
+                        <a href="{{ path('weizig', {'type':type,'id':item.id}) }}" >
+                            <span class="glyphicon glyphicon-pencil" style="color:red"></span>
+                        </a>
+                    </td>
+                        <td title="verwijder deze afdeling">
+                            <a href="{{ path('delete', {'type':type,'id':item.id}) }}" >
+                                <span class="glyphicon glyphicon-minus" style="color:red"></span>
+                            </a>
+                        </td>
+
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

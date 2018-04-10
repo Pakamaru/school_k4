@@ -1,0 +1,81 @@
+body {
+    background-color: #f1f1f1;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+.sport-about, .sport-news {
+    border-width: 3px !important;
+}
+
+.sport-item {
+    padding: 5px 21px;
+    border: 1px solid black;
+    margin: 1px 0px;
+}
+
+.sport-item:hover {
+    background-color: #0088CC;
+}
+
+.sport-list {
+    width: fit-content;
+    padding: 0;
+    margin: auto;
+    background-color: lightblue;
+    text-decoration: none;
+    list-style: none;
+}
+
+.back-to-homepage,
+.logout {
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    background-color: #4285F4;
+    color: white;
+    border-radius: 0.25rem;
+    transition: 0.3s ease-in-out all;
+}
+
+.back-to-homepage:hover,
+.logout:hover {
+    background-color: #0d47a1;
+    color: white;
+}
+
+.logout {
+    float: right;
+}
+
+.detail-pagina div.row > * {
+    display: table;
+}
+
+.form-row {
+    margin-bottom: 2rem;
+}
+
+.block {
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.list-unstyled {
+    max-width: 144px;
+    text-align: center;
+    line-height: 42px;
+}
+
+.list-unstyled > a > li {
+    padding: 3px 9px;
+    margin: 9px 0px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 90px;
+}
+
+.list-unstyled > a > li:hover {
+    background-color: rgb(170, 170, 170);
+    border-radius: 15px;
+}

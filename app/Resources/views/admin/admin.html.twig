@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Welkom Admin</h1>
+
+        <ul class="list-unstyled">
+            <a href="{{ path('beheer', {'type':'user'}) }}"><li>
+                User beheer
+            </li></a>
+            <a href="{{ path('beheer', {'type':'sport'}) }}"><li>
+                    Sport beheer
+            </li></a>
+            <a href="{{ path('beheer', {'type':'afdeling'}) }}"><li>
+                    Afdeling beheer
+            </li></a>
+        </ul>
+    </div>
+
+{% endblock %}

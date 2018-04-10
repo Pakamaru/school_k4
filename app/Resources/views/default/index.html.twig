@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container center">
+        <ul class="sport-list">
+    {% for sport in sports %}
+                <a href="{{ path('detail_sport',{'id':sport.id}) }}">
+                <li class="sport-item">
+                    {{ sport.name }}
+                </li>
+                </a>
+    {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
